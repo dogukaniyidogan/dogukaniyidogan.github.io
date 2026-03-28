@@ -1,0 +1,372 @@
+:root {
+    --animasyonsuresi: 0.3s;
+    --font: Inter,Arial,sans-serif;
+    --fonticon: 'FontAwesome';
+    --sol-width:30%;
+    --sag-width:60%;
+    --bg1: #fff;
+    --bg2: #f5f5f5;
+    --bg3: #e5e5e5;
+    --bg4: #d5d5d5;
+    --bg5: #c5c5c5;
+    --bg6: #b5b5b5;
+    --bg7: #a5a5a5;
+    --bg8: #959595;
+    --bg9: #848484; 
+    --a:#000000;
+    --a9:#191919;
+    --a8:#333333;
+    --a7:#4c4c4c;
+    --a6:#666666;
+    --a5:#808080;
+    --a4:#999999;
+    --a3:#b3b3b3;
+    --a2:#cccccc;
+    --a1:#e6e6e6;
+    --a05:#f5f5f5;
+    --b: #ff4d00;
+    }
+
+
+* {
+    font-family: Manrope, Arial, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(9 19 34 / 25%) transparent;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+ body {
+        overflow: hidden;
+        background: var(--bg1);
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        cursor: default;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        -moz-appearance: none !important;
+        height: 1mm;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        background: rgba(147,147,147,0.5);
+    }
+
+        ::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(147,147,147,0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(147,147,147,0.7);
+        }
+
+
+        a {
+	text-decoration: none;
+	color: unset;
+}
+
+ul:not(.def),
+ul:not(.def)>li {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+a.button {
+    width: auto;
+    height: 50px;
+    background: var(--a);
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+	text-align:center;
+}
+
+a.button.gray {
+    background: var(--b5);
+}
+
+a.button.cdominant {
+    background: #fff;
+    border: 1px solid var(--a);
+    color: var(--a);
+}
+
+a.button.cdominant:hover {
+    background: var(--a);
+    color: #fff;
+}
+
+a.button:hover {
+    background: var(--a);
+}
+
+a.button.cdominant:active {
+    background: var(--a12);
+}
+
+a.button:hover {
+    background: var(--a11);
+}
+
+#app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 0 32px;
+}
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  background: radial-gradient(
+    circle,
+    rgba(204, 204, 204, 0.25) 0%,
+    rgba(204, 204, 204, 0.15) 30%,
+    rgba(204, 204, 204, 0.05) 60%,
+    transparent 80%
+  );
+
+  filter: blur(80px);
+  transition: background 0.3s ease;
+}
+
+
+.container {
+    position: relative;
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+header{
+    position: sticky;
+    top: 96px;
+    width: var(--sol-width);
+    height: calc(100vh - 96px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0px 16px 96px 0;
+    margin-right: 10%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+header > div {
+    width: 100%;
+    position: relative;
+    min-height: 50px;
+}
+
+header > div.alt > ul {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+header > div.alt > ul > li {
+    margin: 4px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div.alt > ul > li > a > svg {
+    width: 1.5em;
+    color: var(--a8);
+}
+
+header > div.alt > ul > li > a > svg:hover {
+    color: var(--b);
+}
+
+main{
+    position: relative;
+    width: var(--sag-width);;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding:32px 0;
+}
+
+main:before {
+    content: '';
+    background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0.05) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 0% / .05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    display: block;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -2;
+    top: -16px;
+    left: -16px;
+}
+
+main:after {
+    content: '';
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent, rgb(255,255,255));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+main > section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 96px 0;
+}
+
+main > section > baslik {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin-bottom: 32px;
+}
+
+
+bio {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+bio > span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+bio > span {
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+bio > span:nth-child(2) {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+bio > span:nth-child(3) {
+    color:var(--a4);
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+nav > div {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+nav > div:before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1px;
+    width: 16px;
+    background: var(--a5);
+    margin-right: 10px;
+    transition: width var(--animasyonsuresi);
+}
+
+nav > div.aktif:before,
+nav > div:hover:before {
+    width: 32px;
+    background: var(--b);
+    height: 1px;
+}
+
+nav > div.aktif {
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 1631px) { /*1920x1080*/ /*1680px	1050px*/
+	div[layout] {
+		width: 1300px;
+	}
+}
+
+@media only screen and (max-width: 1630px) and (min-width: 1440px) { /*1600px	900px*/ /*1440px 900px*/
+	div[layout] {
+		width: 1240px;
+	}
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1280px) { /*1366px 768px*/ /*1280px 800px*/
+	div[layout] {
+		width: 1024px;
+	}
+}
+
+
+@media screen and (max-width: 1279px) and (min-width: 1024px) {
+	div[layout] {
+		width: 960px;
+	}
+}
+
+
+@media only screen and (max-width: 1023px) { /*Mobil*/
+    div[layout] {
+		width: 100%;
+	}
+}
