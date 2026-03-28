@@ -5,14 +5,6 @@
     --sol-width:30%;
     --sag-width:60%;
     --bg1: #fff;
-    --bg2: #f5f5f5;
-    --bg3: #e5e5e5;
-    --bg4: #d5d5d5;
-    --bg5: #c5c5c5;
-    --bg6: #b5b5b5;
-    --bg7: #a5a5a5;
-    --bg8: #959595;
-    --bg9: #848484; 
     --a:#000000;
     --a9:#191919;
     --a8:#333333;
@@ -25,21 +17,54 @@
     --a1:#e6e6e6;
     --a05:#f5f5f5;
     --b: #ff4d00;
+    --glow: radial-gradient(
+    circle,
+    rgba(204, 204, 204, 0.25) 0%,
+    rgba(204, 204, 204, 0.15) 30%,
+    rgba(204, 204, 204, 0.05) 60%,
+    transparent 80%
+  );
     }
+
+    
+
+   [data-theme="dark"] .light-mode {
+        display: none;
+    }   
+
+
+   [data-theme="light"] .dark-mode {
+        display: none;
+    }
+    
+   [data-theme="dark"]:root {
+        --a:#e6e6e6;
+        --a9:#e6e6e6;
+        --a8:#cccccc;
+        --a7:#b3b3b3;
+        --a6:#999999;
+        --a5:#808080;
+        --a4:#666666;
+        --a3:#4c4c4c;
+        --a2:#333333;
+        --a1:#191919;
+        --a05:#000000;
+        --bg1: #040404;
+        --glow: radial-gradient(
+    circle,
+    rgba(8, 8, 8, 0.25) 0%,
+    rgba(8, 8, 8, 0.15) 30%,
+    rgba(8, 8, 8, 0.05) 60%,
+    transparent 80%
+  );
+    }   
+
 
 
 * {
     font-family: Manrope, Arial, sans-serif;
     scrollbar-width: thin;
     scrollbar-color: rgb(9 19 34 / 25%) transparent;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
 }
 
  body {
@@ -52,6 +77,7 @@
         height: 100vh;
         position: relative;
         cursor: default;
+        color:var(--a);
     }
 
     ::-webkit-scrollbar {
@@ -140,6 +166,7 @@ a.button:hover {
     overflow-y: auto;
     scroll-behavior: smooth;
     padding: 0 32px;
+    box-sizing: border-box;
 }
 
 .cursor-glow {
@@ -153,15 +180,9 @@ a.button:hover {
   transform: translate(-50%, -50%);
   z-index: 9999;
 
-  background: radial-gradient(
-    circle,
-    rgba(204, 204, 204, 0.25) 0%,
-    rgba(204, 204, 204, 0.15) 30%,
-    rgba(204, 204, 204, 0.05) 60%,
-    transparent 80%
-  );
+  background: var(--glow);
 
-  filter: blur(80px);
+  filter: blur(60px);
   transition: background 0.3s ease;
 }
 
@@ -205,21 +226,28 @@ header > div.alt > ul {
 }
 
 header > div.alt > ul > li {
-    margin: 4px;
-    width: 48px;
-    height: 48px;
+    margin: 8px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    background: var(--a05);
+    border-radius: 50%;
 }
 
-header > div.alt > ul > li > a > svg {
-    width: 1.5em;
-    color: var(--a8);
+[data-theme="dark"] header > div.alt > ul > li{
+    background: var(--a1);
 }
 
-header > div.alt > ul > li > a > svg:hover {
-    color: var(--b);
+header > div.alt > ul > li svg {
+    width: 24px;
+    fill: var(--a8);
+}
+
+header > div.alt > ul > li svg:hover {
+    fill: var(--b);
 }
 
 main{
@@ -233,7 +261,7 @@ main{
     padding:32px 0;
 }
 
-main:before {
+/*main:before {
     content: '';
     background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0.05) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 0% / .05) 1px, transparent 1px);
     background-size: 32px 32px;
@@ -256,13 +284,13 @@ main:after {
     position: absolute;
     top: 0;
     left: 0;
-}
+}*/
 
 main > section {
     position: relative;
     width: 100%;
     height: auto;
-    padding: 96px 0;
+    padding: 64px 0 0 0;
 }
 
 main > section > baslik {
@@ -335,6 +363,10 @@ nav > div:hover:before {
     height: 1px;
 }
 
+nav > div.aktif:before{
+    height: 3px;
+}
+
 nav > div.aktif {
     font-weight: bold;
 }
@@ -369,4 +401,37 @@ nav > div.aktif {
     div[layout] {
 		width: 100%;
 	}
+
+    :root {
+    --sag-width: 100%;
+    --sol-width: 100%;
+    }
+
+    #app{
+        padding: 0 16px;
+    }
+
+    .container {
+        flex-direction: column;;
+    }
+
+    .container > header {
+        height: auto;
+        padding-bottom: 0;
+        position: relative;
+        top: 0;
+        padding-top: 96px;
+    }
+
+    .container > header > div.orta {
+        padding: 32px 0;
+    }
+
+    section#about {
+        padding-top: 0;
+    }
+
+    section#about > icerik > metin {
+        text-align: justify;
+    }
 }

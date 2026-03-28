@@ -45,18 +45,18 @@ cards {
 			position: relative;
 			width: 100%;
 			height: auto;
-			border: 1px solid var(--b1);
+			border: 1px solid var(--a1);
 			border-radius: 16px;
-			margin-bottom: 64px !important;
+			margin-bottom: 32px !important;
 			box-sizing: border-box;
-			/*padding: 29px !important;*/
+			padding: 29px !important;
 			overflow: hidden;
-			/*background: #fff;*/
+			background: var(--bg1);
 		}
 
-			/*cards > ul > li:hover {
+			cards > ul > li:hover {
 				box-shadow: 0 3px 23px rgba(0, 0, 0, 0.05);
-			}*/
+			}
 
 			cards > ul > li > div {
 				position: relative;
@@ -118,7 +118,8 @@ cards {
 					}
 
 					cards > ul > li > div:nth-child(2) p {
-						height: 7ch;
+						height: auto;
+                        max-height: 7ch;
 						overflow: hidden;
 						-webkit-line-clamp: 3;
                         -webkit-box-orient: vertical;
@@ -144,15 +145,12 @@ cards {
 			cards > ul > li bilgi > *:first-child:before {
 				margin-left: 0;
 			}
-			
-			cards> ul > li > div:nth-child(2) > bilgi > kategori:not(:first-child):not(:nth-child(2)) {
-    display: none;
-}
+	
 
 cards > ul > li > div:nth-child(2) > bilgi > * {
     background: var(--a05);
     padding: 8px;
-    margin: 0 8px;
+    margin: 8px;
     border-radius: 16px;
     font-size: 0.8rem;
 }
@@ -165,6 +163,9 @@ cards > ul > li > div:nth-child(2) > bilgi > *:last-child {
     margin-right: 0;
 }
 
+[data-theme="dark"] cards > ul > li > div:nth-child(2) > bilgi > *{
+    background: var(--a1);
+}
 
 /*Manþet Baþlangýç*/
 
@@ -272,7 +273,7 @@ cards.manset {
 @media only screen and (max-width: 1023px) { /*Mobil*/
 
 	cards > ul {
-		padding: 20px !important;
+		padding: 0px !important;
 	}
 
 		cards > ul:empty:before,
@@ -292,14 +293,16 @@ cards.manset {
 			cards > ul > li > div:nth-child(2) {
 				width: 100%;
 				padding-left: 0;
+                padding-top:16px;
 			}
 
 			cards > ul > li > div:first-child {
-				height: 300px;
+				height: 160px;
 				width: 100%;
 				margin: auto;
 				border-radius: 11px;
 			}
+
 
 
 	cards.manset{
@@ -309,4 +312,5 @@ cards.manset {
 		cards.manset > ul {
 			grid-template-columns: repeat(1, 100%);
 		}
+
 }
