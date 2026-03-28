@@ -17,6 +17,7 @@
     --a1:#e6e6e6;
     --a05:#f5f5f5;
     --b: #ff4d00;
+     --scrollbar-color : rgba(14, 14, 14, 0.25) transparent;
     --glow: radial-gradient(
     circle,
     rgba(204, 204, 204, 0.25) 0%,
@@ -50,6 +51,7 @@
         --a1:#191919;
         --a05:#000000;
         --bg1: #040404;
+        --scrollbar-color : rgba(141, 141, 141, 0.25) transparent;
         --glow: radial-gradient(
     circle,
     rgba(8, 8, 8, 0.25) 0%,
@@ -64,7 +66,7 @@
 * {
     font-family: Manrope, Arial, sans-serif;
     scrollbar-width: thin;
-    scrollbar-color: rgb(9 19 34 / 25%) transparent;
+    scrollbar-color: var(--scrollbar-color);
 }
 
  body {
@@ -85,21 +87,6 @@
         -moz-appearance: none !important;
         height: 1mm;
     }
-
-    ::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 0;
-        border-radius: 0;
-        background: rgba(147,147,147,0.5);
-    }
-
-        ::-webkit-scrollbar-thumb:window-inactive {
-            background: rgba(147,147,147,0.3);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(147,147,147,0.7);
-        }
-
 
         a {
 	text-decoration: none;
