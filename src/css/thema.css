@@ -354,6 +354,15 @@ nav > div.aktif {
     font-weight: bold;
 }
 
+section#about metin {
+    color: var(--a7);
+}
+
+section#about metin vurgu {
+    color: var(--a);
+    font-weight: 500;
+}
+
 @media only screen and (min-width: 1631px) { /*1920x1080*/ /*1680px	1050px*/
 	div[layout] {
 		width: 1300px;

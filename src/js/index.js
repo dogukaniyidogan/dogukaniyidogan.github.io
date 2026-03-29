@@ -1,4 +1,4 @@
-const glow = document.querySelector(".cursor-glow");
+//const glow = document.querySelector(".cursor-glow");
 
 // window.addEventListener("mousemove", (e) => {
 //   glow.style.left = e.clientX + "px";
