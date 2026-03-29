@@ -9,33 +9,26 @@
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.id;
+window.addEventListener("scroll", () => {
+  let current = "";
 
-      if (entry.isIntersecting) {
-        sections.forEach(sec => sec.classList.remove("aktif"));
-        entry.target.classList.add("aktif");
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
 
-        navLinks.forEach(link => {
-          link.parentElement.classList.remove("aktif");
+    if (window.scrollY >= top) {
+      current = section.id;
+    }
+  });
 
-          if (link.getAttribute("href") === `#${id}`) {
-            link.parentElement.classList.add("aktif");
-          }
-        });
-      }
-    });
-  },
-  {
-    root: null,
-    threshold: 0.1 // section'ın %60'ı görünür olunca aktif
-  }
-);
+  sections.forEach(sec => sec.classList.remove("aktif"));
+  document.getElementById(current)?.classList.add("aktif");
 
-sections.forEach((section) => {
-  observer.observe(section);
+  navLinks.forEach(link => {
+    link.parentElement.classList.toggle(
+      "aktif",
+      link.getAttribute("href") === `#${current}`
+    );
+  });
 });
 
 
