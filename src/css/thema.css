@@ -29,12 +29,12 @@
 
     
 
-   [data-theme="dark"] .light-mode {
+   [data-theme="light"] .light-mode {
         display: none;
     }   
 
 
-   [data-theme="light"] .dark-mode {
+   [data-theme="dark"] .dark-mode {
         display: none;
     }
     
@@ -304,12 +304,6 @@ bio > span {
 }
 
 bio > span:nth-child(2) {
-    font-size: 1.3rem;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-}
-
-bio > span:nth-child(3) {
     color:var(--a4);
 }
 
