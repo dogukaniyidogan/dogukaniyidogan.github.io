@@ -66,6 +66,7 @@
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-color);
     scroll-behavior: smooth;
+    transition: background var(--animasyonsuresi), border-color var(--animasyonsuresi);
 }
 
  body {
