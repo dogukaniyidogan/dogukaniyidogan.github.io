@@ -16,7 +16,7 @@ cards {
 
 		cards > ul:empty:after,
 		cards > ul:not(:has(li)):after{
-			content: 'Bu Kategoriye Ait Bir Ýçerik Bulunamadý';
+			content: 'Bu Kategoriye Ait Bir İçerik Bulunamadı';
 			text-align: center;
 			justify-content: center;
 			display: flex;
@@ -81,6 +81,17 @@ cards {
 					width: 160px;
                     height: 160px;
 					border-radius: 16px;
+				}
+
+				html[data-theme="dark"] cards > ul > li > div:first-child:before {
+					content:'';
+					position:absolute;
+					background:rgba(0,0,0,0.5);
+					width:100%;
+					height:100%;
+					top:0;
+					left:0;
+					z-index:2;
 				}
 
 					cards > ul > li > div:first-child > a {
